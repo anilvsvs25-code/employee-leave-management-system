@@ -1,9 +1,10 @@
+import os
 import mysql.connector
 
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Anilsharmavs@45",
+    password=os.getenv("MYSQL_PASSWORD),
     database="employee_leave_db"
 )
 
@@ -26,3 +27,4 @@ conn.commit()
 print("✅ Leave status updated successfully")
 
 conn.close()
+
